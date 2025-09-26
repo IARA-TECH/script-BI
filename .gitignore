@@ -1,0 +1,8 @@
+# Variáveis de ambiente
+.env
+
+# Arquivo de credenciais
+credentials.json
+
+# Logs
+*.log
