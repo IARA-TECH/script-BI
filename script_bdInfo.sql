@@ -24,6 +24,5 @@ CREATE TABLE issues (
 ALTER TABLE issues
 ADD CONSTRAINT unique_issue_per_survey UNIQUE (survey_id, issue_description);
 
-SELECT * FROM abacus_survey
-
-DROP TABLE issues
+ALTER TABLE abacus_survey
+ADD COLUMN updated_at DATE NOT NULL DEFAULT current_date;
