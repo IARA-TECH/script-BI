@@ -26,3 +26,6 @@ ADD CONSTRAINT unique_issue_per_survey UNIQUE (survey_id, issue_description);
 
 ALTER TABLE abacus_survey
 ADD COLUMN updated_at DATE NOT NULL DEFAULT current_date;
+
+ALTER TABLE abacus_survey
+ADD COLUMN problems_quantity INT NOT NULL;
