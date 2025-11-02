@@ -52,9 +52,10 @@ for row in rows:
             is_signal_quality_satisfactory,
             photo_without_interference,
             lighting_quality,
-            would_use_or_recommend
+            would_use_or_recommend,
+            problems_quantity
         )
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON CONFLICT (email) DO UPDATE SET
             age = EXCLUDED.age,
             job_responsibilities = EXCLUDED.job_responsibilities,
@@ -67,7 +68,8 @@ for row in rows:
             is_signal_quality_satisfactory = EXCLUDED.is_signal_quality_satisfactory,
             photo_without_interference = EXCLUDED.photo_without_interference,
             lighting_quality = EXCLUDED.lighting_quality,
-            would_use_or_recommend = EXCLUDED.would_use_or_recommend
+            would_use_or_recommend = EXCLUDED.would_use_or_recommend,
+            problems_quantity = EXCLUDED.problems_quantity
         RETURNING id
     """, (
         row.get("email"),
@@ -82,7 +84,8 @@ for row in rows:
         clean_value(row.get("is_signal_quality_satisfactory")),
         clean_value(row.get("photo_without_interference")),
         clean_int(row.get("lighting_quality")),
-        row.get("would_use_or_recommend")
+        row.get("would_use_or_recommend"),
+        row.get("problems_quantity")
     ))
     
     # pegar o ID gerado no abacus_survey
