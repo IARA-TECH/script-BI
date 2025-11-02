@@ -89,7 +89,9 @@ script-BI-main/
 ---
 
 ## 👩‍💻 Autor
-**IARA Tech**
+
+**Iara Tech**
+
 Projeto Interdisciplinar desenvolvido por alunos do 1º e 2º ano de ensino médio do Instituto J&F, com o propósito de facilitar o registro e consulta de ábacos industriais.
 
 📍 São Paulo, Brasil
